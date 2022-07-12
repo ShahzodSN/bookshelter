@@ -21,7 +21,6 @@ const elResult = document.querySelector(".result");
 const elNewBook = document.querySelector("hero__btn");
 let fetchArr = [];
 let bokmarkArr = [];
-let order = "relevance";
 let search;
 const getBooks = async function (search) {
   const request = await fetch(
@@ -43,13 +42,7 @@ elInput.addEventListener("input", function (evt) {
 
   getBooks(search);
 });
-/*
-elNewBook.addEventListener("click", function () {
-  order = "newest";
-  elBookList.innerHTML = null;
-  getBooks();
-});
-*/
+
 //Page
 let renderBook = function (item, place) {
   elBookList.innerHTML = null;
@@ -191,23 +184,3 @@ elBookList.addEventListener("click", function (evt) {
     console.log(fetchArr);
   }
 });
-
-/*
-const showModal = document.querySelector(".more-info");
-const modals = document.querySelector(".modal");
-const closeModalBtn = document.querySelector(".close-modal");
-const overlay = document.querySelector(".overlay");
-
-const openModal = function () {
-  modals.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-
-const closeModal = function () {
-  modals.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-
-showModal.addEventListener("click", openModal);
-closeModalBtn.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);*/
